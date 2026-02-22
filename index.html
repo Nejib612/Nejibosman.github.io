@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Nejib Osman — Data & Business Analyst portfolio (SQL, Excel, KPI reporting, data validation) leveraging 5+ years of operational experience." />
-  <title>Nejib Osman | Data &amp; Business Analyst</title>
+  <meta name="description" content="Nejib Osman — Data & Business Analyst portfolio." />
+  <title>Nejib Osman | Data & Business Analyst</title>
 
   <style>
     :root{
@@ -35,479 +35,232 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 
-    /* Header */
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
       background: rgba(5,8,22,.55);
       border-bottom:1px solid var(--line);
     }
+
     .nav{
       height:62px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
     }
-    .brand{
-      font-weight:700;
-      letter-spacing:.2px;
-      opacity:.95;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .brand small{color:var(--muted); font-weight:550}
-    nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      font-size:14px;
-      color:var(--muted);
-    }
-    nav a{padding:8px 6px;border-radius:10px; display:inline-flex; align-items:center; gap:8px;}
-    nav a:hover{color:var(--text); background:rgba(255,255,255,.05)}
 
-    /* Hero (FORCED CENTER) */
+    .brand{font-weight:700}
+    nav{display:flex; gap:18px; font-size:14px; color:var(--muted)}
+    nav a:hover{color:var(--text)}
+
     .hero{
-      min-height: 62vh;
+      min-height:62vh;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:72px 0 34px;
+      text-align:center;
+      padding:72px 0;
       border-bottom:1px solid var(--line);
-      text-align:center;
-    }
-    .hero .wrap{
-      width:100%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-    }
-    .hero h1{
-      margin:0 0 10px;
-      font-size:44px;
-      letter-spacing:-.8px;
-      line-height:1.1;
-      text-align:center;
-    }
-    .hero p{
-      margin:0 auto 18px;
-      max-width:760px;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.6;
-      text-align:center;
-    }
-    .hero .meta{
-      margin:0 auto 12px;
-      max-width:760px;
-      color:rgba(185,198,230,.95);
-      font-size:14px;
-      text-align:center;
     }
 
-    .btnRow{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px}
+    .hero h1{font-size:44px;margin-bottom:10px}
+    .hero p{color:var(--muted);max-width:700px;margin:0 auto 15px}
+    .meta{color:var(--muted);font-size:14px}
+
+    .btnRow{display:flex;gap:12px;justify-content:center;margin-top:15px}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
       padding:12px 18px;
       border-radius:12px;
-      border:1px solid transparent;
-      font-size:14px;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-      user-select:none;
-      gap:8px;
-    }
-    .btn.primary{
-      background:var(--btn);
-      color:var(--btnText);
-    }
-    .btn.primary:hover{transform:translateY(-1px)}
-    .btn.ghost{
+      border:1px solid var(--btnGhostBorder);
       background:var(--btnGhost);
-      border-color:var(--btnGhostBorder);
       color:var(--text);
     }
-    .btn.ghost:hover{transform:translateY(-1px); background:rgba(255,255,255,.11)}
+    .btn.primary{background:var(--btn);color:var(--btnText)}
+    .btn:hover{transform:translateY(-1px)}
 
-    /* Sections */
-    section{padding:54px 0; border-bottom:1px solid var(--line)}
-    h2{margin:0 0 14px; font-size:26px; letter-spacing:-.4px}
-    .lead{
-      margin:0 auto 22px;
-      color:var(--muted);
-      max-width:820px;
-      line-height:1.7;
-    }
+    section{padding:54px 0;border-bottom:1px solid var(--line)}
+    h2{margin-bottom:14px}
+    .lead{max-width:800px;color:var(--muted);margin-bottom:20px}
 
-    /* Cards / grid */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap:18px;
-    }
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-      .hero h1{font-size:36px}
-    }
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background:rgba(255,255,255,.03);
       border:1px solid var(--line);
       border-radius:16px;
       padding:18px;
     }
-    .card h3{
-      margin:0 0 10px;
-      font-size:16px;
-      letter-spacing:-.2px;
-    }
-    .card ul{margin:0; padding-left:18px; color:var(--muted)}
-    .card li{margin:8px 0; line-height:1.5}
+    .card ul{color:var(--muted)}
 
-    /* Highlights */
-    .highlights{
-      width:100%;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap:14px;
-      margin-top:16px;
-    }
-    .pill{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:16px;
-      padding:14px 14px;
-      text-align:center;
-    }
-    .pill strong{display:block; font-size:14px; margin-bottom:6px}
-    .pill span{color:var(--muted); font-size:13px; line-height:1.5}
-    @media (max-width: 900px){
-      .highlights{grid-template-columns:1fr}
-    }
-
-    /* Projects area */
     .projectsGrid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:start;
-    }
-    @media (max-width: 900px){
-      .projectsGrid{grid-template-columns:1fr}
+      grid-template-columns:1fr 1fr;
+      gap:20px;
     }
 
-    /* Resume embed */
     .resumeBox{
+      border:1px solid var(--line);
       border-radius:16px;
       overflow:hidden;
-      border:1px solid var(--line);
       background:rgba(255,255,255,.03);
     }
+
     .resumeTop{
+      padding:14px;
+      border-bottom:1px solid var(--line);
       display:flex;
       justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      padding:14px 16px;
-      border-bottom:1px solid var(--line);
     }
-    .resumeTop .title{
-      font-weight:650;
-      letter-spacing:.2px;
-    }
-    .small{
-      font-size:13px;
-      color:var(--muted);
-    }
+
     .resumeScroll{
       max-height:380px;
       overflow:auto;
       padding:16px;
     }
-    .resumeScroll h4{
-      margin:0 0 8px;
-      font-size:14px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(185,198,230,.95);
-    }
-    .resumeLine{height:1px;background:var(--line);margin:12px 0}
-    .resumeRole{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-    .resumeRole strong{font-size:15px}
-    .resumeRole span{color:var(--muted);font-size:13px}
-    .resumeScroll ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
-    .resumeScroll li{margin:7px 0}
-    .resumeScroll a{
-      text-decoration:underline;
-      text-underline-offset:3px;
-    }
 
-    /* Footer */
-    footer{
-      padding:26px 0;
-      color:rgba(185,198,230,.85);
-      font-size:13px;
-      text-align:center;
-    }
-
-    /* LinkedIn icon in header */
-    .navIcon{
-      width:18px;
-      height:18px;
-      display:inline-block;
-      opacity:.9;
-    }
-    .navIcon:hover{opacity:1}
+    footer{text-align:center;padding:25px 0;color:var(--muted);font-size:13px}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">
-          <span>Nejib Osman</span>
-          <small>Portfolio</small>
-        </div>
 
-        <nav>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Nejib Osman</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/nejib-osman12/" target="_blank">LinkedIn</a>
+    </nav>
+  </div>
+</header>
 
-          <a href="https://www.linkedin.com/in/nejib-osman12/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg class="navIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.22 23.99V7.98h4.56v16.01H.22ZM8.09 7.98h4.37v2.19h.06c.61-1.16 2.11-2.38 4.34-2.38 4.64 0 5.5 3.05 5.5 7.02v9.18H17.8v-8.14c0-1.94-.03-4.43-2.7-4.43-2.7 0-3.11 2.11-3.11 4.29v8.28H8.09V7.98Z"/>
-            </svg>
-          </a>
-        </nav>
-      </div>
+<div class="hero">
+  <div class="wrap">
+    <h1>Data & Business Analyst</h1>
+    <p>Using SQL, Excel, KPI reporting, and dashboards to turn business data into actionable insights.</p>
+    <div class="meta">Twin Cities, Minnesota • Authorized to work in the U.S.</div>
+
+    <div class="btnRow">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" href="#contact">Contact Me</a>
+      <a class="btn" href="./Assets/Nejib_Osman_Resume.pdf" target="_blank">Download Resume</a>
     </div>
-  </header>
+  </div>
+</div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="wrap">
-      <h1>Data &amp; Business Analyst</h1>
-      <p>Using SQL, Excel, KPI reporting, and dashboards to turn business data into clear, actionable insights.</p>
-      <div class="meta">Twin Cities, Minnesota • Authorized to work in the U.S.</div>
+<section id="about">
+  <div class="wrap">
+    <h2>About Me</h2>
+    <p class="lead">
+      Data & Business Analyst with 5+ years of operational experience.
+      Skilled in SQL, Excel, KPI reporting, and data validation.
+      I combine analytical tools with real-world business understanding to improve decision-making and performance tracking.
+    </p>
+  </div>
+</section>
 
-      <div class="btnRow">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn ghost" href="#contact">Contact Me</a>
-        <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">
-          Download Resume (PDF)
-        </a>
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Analytics</h3>
+        <ul>
+          <li>SQL</li>
+          <li>Excel (Pivot Tables, Lookups)</li>
+          <li>KPI Reporting</li>
+          <li>Data Validation</li>
+        </ul>
       </div>
-
-      <div class="highlights">
-        <div class="pill">
-          <strong>Data &amp; KPI Focus</strong>
-          <span>KPI tracking, reporting trends, and validating transactional data for accuracy.</span>
-        </div>
-        <div class="pill">
-          <strong>Analytical Discipline</strong>
-          <span>Identify inconsistencies, review datasets, and support structured, data-driven decisions.</span>
-        </div>
-        <div class="pill">
-          <strong>Business Context</strong>
-          <span>5+ years in operational environments to ask better questions and build useful insights.</span>
-        </div>
+      <div class="card">
+        <h3>Business Insight</h3>
+        <ul>
+          <li>Performance Tracking</li>
+          <li>Trend Monitoring</li>
+          <li>Operational Efficiency</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Experience</h3>
+        <ul>
+          <li>High-volume transaction accuracy</li>
+          <li>Discrepancy investigation</li>
+          <li>Process improvement</li>
+        </ul>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap">
-      <h2>About Me</h2>
-      <p class="lead">
-        I’m a Data &amp; Business Analyst with 5+ years of experience in high-volume business environments.
-        I focus on SQL, Excel, KPI reporting, and data validation to translate raw data into structured insights.
-        <br><br>
-        My background in operational and customer-facing roles provides practical context for understanding performance trends, efficiency gaps, and business outcomes.
-      </p>
-    </div>
-  </section>
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="wrap">
-      <h2>Skills</h2>
-      <p class="lead">Core analytics skills backed by real-world operational experience.</p>
+    <div class="projectsGrid">
 
-      <div class="grid">
-        <div class="card">
-          <h3>Analytics &amp; Tools</h3>
-          <ul>
-            <li>SQL (joins, filtering, aggregation)</li>
-            <li>Excel (Pivot Tables, Lookups)</li>
-            <li>Data validation &amp; quality checks</li>
-            <li>KPI reporting &amp; performance tracking</li>
-          </ul>
+      <div class="card">
+        <h3>Vogue Retail KPI Dashboard</h3>
+        <ul>
+          <li>Sales and revenue trend tracking</li>
+          <li>Performance reporting overview</li>
+          <li>Structured KPI summary dashboards</li>
+        </ul>
+      </div>
+
+      <div class="resumeBox">
+        <div class="resumeTop">
+          <div>Embedded Resume</div>
+          <a class="btn primary" href="./Assets/Nejib_Osman_Resume.pdf" target="_blank">Open Resume PDF</a>
         </div>
 
-        <div class="card">
-          <h3>Business Analysis</h3>
-          <ul>
-            <li>Trend monitoring &amp; summary reporting</li>
-            <li>Process improvement &amp; operational efficiency</li>
-            <li>Stakeholder-friendly insights</li>
-            <li>Clear communication of findings</li>
-          </ul>
-        </div>
+        <div class="resumeScroll">
+          <strong>NEJIB OSMAN</strong><br>
+          Twin Cities, Minnesota<br>
+          <a href="https://www.linkedin.com/in/nejib-osman12/" target="_blank">LinkedIn</a> |
+          <a href="https://nejib612.github.io/Nejibosman.github.io/" target="_blank">Web Portfolio</a>
+          <br><br>
 
-        <div class="card">
-          <h3>Operational Strengths</h3>
-          <ul>
-            <li>High-volume accuracy &amp; attention to detail</li>
-            <li>Discrepancy investigation &amp; resolution</li>
-            <li>Performance-focused execution</li>
-            <li>Confidentiality &amp; compliance awareness</li>
-          </ul>
+          <strong>Professional Summary</strong><br>
+          Data & Business Analyst with 5+ years in high-volume financial and operational duties.
+          Skilled in SQL, Excel, KPI reporting, and data validation.
+          <br><br>
+
+          <strong>Experience</strong><br>
+          Teller I | Data & Financial Operations Support<br>
+          Wells Fargo — Bloomington, MN<br>
+          • Processed 100+ daily transactions<br>
+          • Investigated discrepancies<br>
+          • Monitored transaction patterns<br><br>
+
+          Customer Service Team Lead<br>
+          • Led 12–15 member team<br>
+          • Tracked performance metrics<br>
+          • Improved workflow efficiency
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="wrap">
-      <h2>Projects</h2>
-      <p class="lead">A few examples of the type of analysis and reporting work I’m building.</p>
+<section id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lead">Best way to reach me is email. LinkedIn is also open.</p>
 
-      <div class="projectsGrid">
-        <!-- Left: Project Cards (like the other portfolio) -->
-        <div>
-          <div class="card" style="margin-bottom:18px;">
-            <h3>Vogue Retail KPI Dashboard (Sample)</h3>
-            <ul>
-              <li>Built a clean KPI summary for sales, revenue trends, and operational performance</li>
-              <li>Created simple reporting views for monthly tracking and decision support</li>
-              <li><span class="small">Tools:</span> Excel, SQL (in progress), Tableau/Power BI (in progress)</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Operational Reporting &amp; Data Quality (Sample)</h3>
-            <ul>
-              <li>Validated records, investigated inconsistencies, and improved reporting accuracy</li>
-              <li>Structured tracking for performance metrics and workflow efficiency</li>
-              <li><span class="small">Tools:</span> Excel, documentation, KPI tracking</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Right: Embedded Resume -->
-        <div class="resumeBox">
-          <div class="resumeTop">
-            <div>
-              <div class="title">Embedded Resume</div>
-              <div class="small">Preview below • Download full resume</div>
-            </div>
-            <a class="btn primary" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
-          </div>
-
-          <div class="resumeScroll" aria-label="Embedded Resume Scroll Area">
-            <h4>NEJIB OSMAN</h4>
-            <div class="small">Twin Cities, Minnesota</div>
-            <div class="small">
-              <a href="https://www.linkedin.com/in/nejib-osman12/" target="_blank" rel="noopener">LinkedIn</a>
-              &nbsp;|&nbsp;
-              <a href="https://nejibosman.github.io" target="_blank" rel="noopener">Web Portfolio</a>
-            </div>
-            <div class="small">612-449-4348 | nejibosman12@hotmail.com</div>
-
-            <div class="resumeLine"></div>
-
-            <h4>Professional Summary</h4>
-            <div class="small" style="line-height:1.65;">
-              Data &amp; Business Analyst with 5+ years in high-volume financial and operational duties.
-              Skilled in SQL, Excel, KPI reporting, and data validation to translate transactional data into actionable business insights.
-              Known for accuracy, analytical discipline, and performance-focused execution.
-            </div>
-
-            <div class="resumeLine"></div>
-
-            <h4>Professional Experience</h4>
-
-            <div class="resumeRole">
-              <strong>Teller I | Data &amp; Financial Operations Support</strong>
-              <span>Wells Fargo — Bloomington, MN | Feb 2022 – Dec 2025</span>
-            </div>
-            <ul>
-              <li>Processed 100+ daily financial transactions with strong accuracy and compliance adherence</li>
-              <li>Investigated account discrepancies by reviewing transaction data and resolving inconsistencies</li>
-              <li>Monitored transaction patterns to support reporting accuracy and operational efficiency</li>
-            </ul>
-
-            <div class="resumeRole" style="margin-top:14px;">
-              <strong>Customer Service Team Lead</strong>
-              <span>Walmart — Faribault, MN | Jun 2019 – Dec 2021</span>
-            </div>
-            <ul>
-              <li>Led a 12–15-member team while tracking daily performance metrics</li>
-              <li>Optimized staffing and workflow to improve peak-period efficiency</li>
-              <li>Reduced bottlenecks through structured process improvements</li>
-            </ul>
-
-            <div class="resumeLine"></div>
-
-            <h4>Education</h4>
-            <div class="small">B.S Computer Science (IP) — Metro State University, Saint Paul, MN | 2024 – Present</div>
-
-            <div class="resumeLine"></div>
-
-            <h4>Core Skills</h4>
-            <div class="small" style="line-height:1.7;">
-              SQL • KPI Reporting • Excel (Pivot Tables, Lookups) • Data Validation •
-              Performance Tracking • Financial &amp; Operational Analysis
-            </div>
-
-            <div style="margin-top:14px;">
-              <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">View Full PDF</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="btnRow" style="justify-content:flex-start;">
+      <a class="btn primary" href="mailto:nejibosman12@hotmail.com">Email Me</a>
+      <a class="btn" href="https://www.linkedin.com/in/nejib-osman12/" target="_blank">LinkedIn</a>
+      <a class="btn" href="./Assets/Nejib_Osman_Resume.pdf" target="_blank">Download Resume</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT (MATCHES YOUR EXAMPLE) -->
-  <section id="contact" style="border-bottom:none;">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <p class="lead">Best way to reach me is email. LinkedIn is also open.</p>
+<footer>
+  © 2026 Nejib Osman
+</footer>
 
-      <div class="btnRow" style="justify-content:flex-start;">
-        <a class="btn primary" href="mailto:nejibosman12@hotmail.com">Email Me</a>
-
-        <a class="btn ghost" href="https://www.linkedin.com/in/nejib-osman12/" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
-
-        <a class="btn ghost" href="assets/Nejib_Osman_Resume.pdf" target="_blank" rel="noopener">
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="y"></span> Nejib Osman
-  </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
